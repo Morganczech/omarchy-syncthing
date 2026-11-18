@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "id": "gruut.syncthing",
+  "name": "Syncthing",
+  "version": "2.0.0",
+  "author": "Morganczech",
+  "license": "MIT",
+  "homepage": "https://github.com/Morganczech/omarchy-syncthing",
+  "description": "Control local Syncthing synchronization from the Omarchy bar: switch between LAN cable and Wi-Fi, enable direct PC-to-Notebook Link-Local cable sync, view a live speed graph, cap bandwidth, and manage devices and folders.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "Syncthing",
+    "description": "Transport mode selector (Auto / LAN / Wi-Fi), live speed graph, bandwidth limiter, and folder controls.",
+    "category": "Network",
+    "aliases": [
+      "sync",
+      "file-sync",
+      "lan-sync"
+    ],
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "showBarRates": true,
+      "openRefreshSec": 1,
+      "closedRefreshSec": 5
+    },
+    "schema": [
+      {
+        "key": "showBarRates",
+        "type": "boolean",
+        "label": "Show live transfer rates in the bar",
+        "defaultValue": true
+      },
+      {
+        "key": "openRefreshSec",
+        "type": "integer",
+        "label": "Open panel refresh interval (seconds)",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "defaultValue": 1
+      },
+      {
+        "key": "closedRefreshSec",
+        "type": "integer",
+        "label": "Background refresh interval (seconds)",
+        "min": 2,
+        "max": 60,
+        "step": 1,
+        "defaultValue": 5
+      }
+    ]
+  }
+}
